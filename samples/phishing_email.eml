@@ -1,0 +1,26 @@
+Return-Path: <bounce@security-microsoft-login.example>
+Received: from mail.security-microsoft-login.example (mail.security-microsoft-login.example [198.51.100.44])
+        by mx.company.example with ESMTPS id A1B2C3
+        for <employee@company.example>; Sat, 06 Jun 2026 10:14:22 +0800
+Authentication-Results: mx.company.example;
+        spf=fail smtp.mailfrom=security-microsoft-login.example;
+        dkim=fail header.d=security-microsoft-login.example;
+        dmarc=fail header.from=security-microsoft-login.example
+From: "Microsoft 365 Support" <security@security-microsoft-login.example>
+Reply-To: helpdesk-reset@outlook-support.example
+To: employee@company.example
+Subject: Urgent: Password expires in 24 hours
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+
+<html>
+  <body>
+    <p>Your Microsoft 365 password will expire within 24 hours.</p>
+    <p>Verify your account immediately to avoid suspension.</p>
+    <p>
+      <a href="http://198.51.100.55:8080/login?session=af31">
+        https://login.microsoftonline.com/
+      </a>
+    </p>
+  </body>
+</html>

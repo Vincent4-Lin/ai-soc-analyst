@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI SOC Analyst</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Local Defensive Triage</p>
+          <h1>AI SOC Analyst</h1>
+        </div>
+        <div class="mode-switch" role="group" aria-label="Analysis mode">
+          <button class="mode-button active" data-mode="log" type="button">Log</button>
+          <button class="mode-button" data-mode="email" type="button">Email</button>
+        </div>
+        <div class="status-pill" id="llmStatus">LLM 待命</div>
+      </header>
+
+      <main class="workspace">
+        <section class="input-pane" aria-labelledby="input-title">
+          <div class="pane-head">
+            <h2 id="input-title">事件輸入</h2>
+            <div class="tool-row">
+              <button class="icon-button" id="loadAuthSample" type="button" title="載入 SSH 範例">SSH</button>
+              <button class="icon-button" id="loadWebSample" type="button" title="載入 Web 範例">WEB</button>
+              <button class="icon-button" id="loadEmailSample" type="button" title="載入 Email 範例">EML</button>
+              <label class="icon-button file-trigger" title="上傳檔案">
+                <input id="fileInput" type="file" accept=".eml,.log,.txt,.json,.csv,.xml,.md" />
+                UP
+              </label>
+            </div>
+          </div>
+
+          <textarea
+            id="artifactInput"
+            spellcheck="false"
+            placeholder="貼上 SSH、Nginx、EDR、Nmap、Trivy、OpenVAS、Windows Event 等內容"
+          ></textarea>
+
+          <div class="controls">
+            <label class="toggle">
+              <input id="useLlm" type="checkbox" checked />
+              <span>LLM 分析</span>
+            </label>
+            <button id="analyzeButton" class="primary-button" type="button">分析</button>
+          </div>
+        </section>
+
+        <section class="results-pane" aria-labelledby="results-title">
+          <div class="pane-head">
+            <h2 id="results-title">分析結果</h2>
+            <div class="tool-row">
+              <button class="icon-button" id="copyReport" type="button" title="複製報告">CP</button>
+              <button class="icon-button" id="downloadReport" type="button" title="下載 Markdown">MD</button>
+            </div>
+          </div>
+
+          <div class="metrics">
+            <div>
+              <span>Risk</span>
+              <strong id="riskScore">--</strong>
+            </div>
+            <div>
+              <span>Findings</span>
+              <strong id="findingCount">--</strong>
+            </div>
+            <div>
+              <span>IOCs</span>
+              <strong id="iocCount">--</strong>
+            </div>
+          </div>
+
+          <nav class="tabs" aria-label="Result tabs">
+            <button class="tab active" data-tab="report" type="button">Report</button>
+            <button class="tab" data-tab="findings" type="button">Findings</button>
+            <button class="tab" data-tab="iocs" type="button">IOCs</button>
+            <button class="tab" data-tab="timeline" type="button">Timeline</button>
+          </nav>
+
+          <div class="tab-panel active" id="reportPanel">
+            <pre id="reportOutput">等待分析。</pre>
+          </div>
+          <div class="tab-panel" id="findingsPanel">
+            <div class="empty-state">尚無 findings。</div>
+          </div>
+          <div class="tab-panel" id="iocsPanel">
+            <div class="empty-state">尚無 IOCs。</div>
+          </div>
+          <div class="tab-panel" id="timelinePanel">
+            <div class="empty-state">尚無 timeline。</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+2026-06-05T02:10:11Z edge-nginx-02 198.51.100.34 "GET /wp-admin/setup-config.php HTTP/1.1" 404 532 "-" "Mozilla/5.0"
+2026-06-05T02:10:18Z edge-nginx-02 198.51.100.34 "GET /../../../../etc/passwd HTTP/1.1" 400 182 "-" "curl/8.1"
+2026-06-05T02:10:25Z edge-nginx-02 198.51.100.34 "GET /search?q=' union select username,password from users-- HTTP/1.1" 403 914 "-" "sqlmap"
+2026-06-05T02:11:42Z edge-nginx-02 203.0.113.91 "POST /api/upload?cmd=powershell%20enc%20SQBFAFgA HTTP/1.1" 401 211 "-" "python-requests/2.31"
+2026-06-05T02:12:06Z trivy image registry.example/app:prod CRITICAL CVE-2026-10001 openssl Remote Code Execution fixed_version=3.2.4
+2026-06-05T02:12:08Z trivy image registry.example/app:prod HIGH CVE-2025-9912 nginx request smuggling fixed_version=1.27.3
