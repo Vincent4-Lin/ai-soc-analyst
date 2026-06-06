@@ -140,7 +140,7 @@ GROQ_API_KEY=your_key_here
 進入專案資料夾：
 
 ```bash
-cd /Users/hayashimeisaki/Documents/Codex/2026-06-05/gsk-yiiqryklornjxvhslyntwgdyb3fyeru18phyduczxqfbbtg8uf9h-llm-api-project
+cd ai-soc-analyst
 ```
 
 如果還沒有 `.env`，建立一次：

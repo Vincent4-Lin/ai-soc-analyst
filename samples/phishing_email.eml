@@ -7,7 +7,7 @@ Authentication-Results: mx.company.example;
         dkim=fail header.d=security-microsoft-login.example;
         dmarc=fail header.from=security-microsoft-login.example
 From: "Microsoft 365 Support" <security@security-microsoft-login.example>
-Reply-To: helpdesk-reset@outlook-support.example
+Reply-To: support-reset@outlook-support.example
 To: employee@company.example
 Subject: Urgent: Password expires in 24 hours
 MIME-Version: 1.0

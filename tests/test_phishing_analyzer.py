@@ -6,7 +6,7 @@ from phishing_analyzer import analyze_email_locally
 PHISHING_EMAIL = """Return-Path: <bounce@security-microsoft-login.example>
 Authentication-Results: mx.company.example; spf=fail smtp.mailfrom=security-microsoft-login.example; dkim=fail; dmarc=fail
 From: "Microsoft 365 Support" <security@security-microsoft-login.example>
-Reply-To: helpdesk-reset@outlook-support.example
+Reply-To: support-reset@outlook-support.example
 To: employee@company.example
 Subject: Urgent: Password expires in 24 hours
 MIME-Version: 1.0

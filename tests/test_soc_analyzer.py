@@ -21,7 +21,7 @@ class SocAnalyzerTests(unittest.TestCase):
         self.assertGreaterEqual(result["risk_score"], 30)
 
     def test_redacts_common_api_key_patterns(self):
-        text = "token=gsk_abcdefghijklmnopqrstuvwxyz1234567890"
+        text = "token=" + "gsk_" + "abcdefghijklmnopqrstuvwxyz1234567890"
 
         self.assertNotIn("gsk_", redact_secrets(text))
         self.assertIn("[REDACTED_SECRET]", redact_secrets(text))
