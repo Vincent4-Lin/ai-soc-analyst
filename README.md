@@ -1,8 +1,28 @@
 # AI SOC Analyst
 
-Local defensive triage MVP for logs and scanner output. It extracts IOCs, matches common SOC signals, scores risk, and optionally sends redacted context to an OpenAI-compatible LLM endpoint for a Traditional Chinese incident report.
+Local defensive SOC triage MVP for logs, scanner output, and phishing email artifacts. It extracts IOCs, matches common SOC signals, scores risk, and optionally sends redacted context to an OpenAI-compatible LLM endpoint for a Traditional Chinese incident report.
+
+This is the main integration project in my cybersecurity portfolio. It combines ideas from earlier focused projects such as phishing email analysis, suspicious login analysis, network log analysis, and threat intelligence writing into one SOC-style workflow.
 
 For a Traditional Chinese project explanation, see [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md).
+
+## Portfolio Position
+
+This repository is intended to be the primary project for showing my current research and engineering direction:
+
+```text
+AI-assisted cybersecurity investigation and network security incident triage.
+```
+
+The goal is not to replace a human analyst with an LLM. The goal is to help an analyst structure messy security artifacts into a reviewable triage report while keeping the detection logic explainable and the workflow defensive.
+
+## How It Relates To My Other Projects
+
+- `Phishing-Email-Analysis` is an earlier rule-based phishing baseline. This project extends that idea with raw `.eml` parsing and SOC-style reporting.
+- `suspicious-login-analyzer` focuses deeply on login events. This project uses similar triage ideas in a broader SOC workflow.
+- `network-log-analysis` is an earlier network log analysis project. This project generalizes the workflow to multiple artifact types.
+- `threat-intelligence-briefs` supports the writing and ATT&CK mapping side of incident reporting.
+- `ai-assisted-security-incident-triage` is an earlier prototype for structured LLM-assisted triage. This repository is the more complete application direction.
 
 ## Setup
 
